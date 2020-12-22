@@ -36,6 +36,22 @@ const Validator = {
         })
 
         return validateSchema.validateAsync(data)
+    },
+
+    updateValidator: data => {
+        const validateSchema = joi.object({
+            fullname: joi.string()
+                .min(6),
+            username: joi.string()
+                .min(6),
+            email: joi.string()
+                .min(6)
+                .email(),
+            phone: joi.string()
+                .pattern(new RegExp('^[0-9]{8}$')),
+            password: joi.string()
+                .min(6)
+        })
     }
 }
 

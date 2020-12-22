@@ -22,7 +22,8 @@ var UserSchema = Schema({
     },
     phone: "String",
     // Date of birth
-    dob: "Date"
+    dob: "Date",
+    recoveryToken: "String"
 })
 
 module.exports = model("User", UserSchema)
